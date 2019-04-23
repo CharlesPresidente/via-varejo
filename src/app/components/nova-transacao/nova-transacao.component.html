@@ -1,3 +1,18 @@
-<p>
-  nova-transacao works!
-</p>
+<section class="nova-transacao">
+  <h2>Nova Transação</h2>
+
+  <form [formGroup]="transacaoForm" (ngSubmit)="registrar()">
+    <label for="">Tipo de Transação</label>
+    <select formControlName="tipo">
+      <option value="{{i}}" *ngFor="let i of tipoObject">{{i}}</option>
+    </select>
+
+    <label for="">Nome da Mercadoria</label>
+    <input type="text" formControlName="nome">
+
+    <label for="">Valor</label>
+    <input type="number" formControlName="valor">
+
+    <button>Adicionar transação</button>
+  </form>
+</section>

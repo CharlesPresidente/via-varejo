@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-nova-transacao',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovaTransacaoComponent implements OnInit {
 
-  constructor() { }
+  public tipoObject: any = ['Compra', 'Venda'];
+  public transacaoForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+    this.transacaoForm = this.formBuilder.group({
+      tipo: ['Compra'],
+      nome: ['', Validators.required],
+      valor: ['R$ 0,00', Validators.required]
+    })
   }
 
+  get f() { return this.transacaoForm.controls; }
+
+  registrar() {
+    if (this.transacaoForm.invalid) {
+      console.log('Registrar: Erro');
+      return
+    }
+
+    console.log('Registrar: ', this.transacaoForm.controls);
+  }
 }

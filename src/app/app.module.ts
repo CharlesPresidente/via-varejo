@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     ComponentsModule,
     PagesModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [],
