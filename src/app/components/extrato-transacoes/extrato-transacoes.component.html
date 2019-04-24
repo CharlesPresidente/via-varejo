@@ -8,7 +8,7 @@
       <th class="right">Valor</th>
     </tr>
 
-    <tr *ngFor="let i of extratoObject">
+    <tr *ngFor="let i of extratoTransacoesInput">
       <td>{{i.tipo === 'compra' ? '+' : '-'}}</td>
       <td>{{i.nome}}</td>
       <td class="right">R$ {{i.valor}}</td>

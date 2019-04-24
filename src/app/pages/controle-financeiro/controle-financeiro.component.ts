@@ -5,11 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './controle-financeiro.component.html',
   styleUrls: ['./controle-financeiro.component.scss']
 })
+
 export class ControleFinanceiroComponent implements OnInit {
+
+  public extratoTransacoesInput: any = [];
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  novaTransacaoOutput(param): void {
+    this.extratoTransacoesInput = param;
+  }
 }

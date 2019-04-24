@@ -11,38 +11,28 @@ export class NovaTransacaoComponent implements OnInit {
 
   @Output() novaTransacaoOutput = new EventEmitter();
 
+  public extrato: any = [];
   public items: FormArray;
-  public tipoObject: any = ['Compra', 'Venda'];
+  public tipoObject = ['compra', 'venda'];
   public transacaoForm: FormGroup;
 
-  constructor(private form: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.transacaoForm = this.form.group({
-      items: this.form.array([this.createItem()])
-    });
-  }
-
-  createItem(): FormGroup {
-    return this.form.group({
-      tipo: ['', Validators.required],
+    this.transacaoForm = this.formBuilder.group({
       nome: ['', Validators.required],
+      tipo: ['', Validators.required],
       valor: ['', Validators.required]
-    });
+    })
   }
 
-
-  get f() { return this.transacaoForm.controls; }
-
-  registrar() {
+  addItem(): void {
     if (this.transacaoForm.invalid) {
-      alert("Favor preencher todos os campos!");
+      alert('Error: Favor preencher todos os campos.');
       return
     }
 
-    this.items = this.transacaoForm.get('items') as FormArray;
-    this.items.push(this.createItem());
-
-    this.novaTransacaoOutput.emit();
+    this.extrato.push(this.transacaoForm.controls);
+    this.novaTransacaoOutput.emit(this.extrato);
   }
 }
