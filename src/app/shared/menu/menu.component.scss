@@ -17,22 +17,45 @@
   }
 
   ul {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    width: 280px;
+    right: -100%;
+    min-width: 280px;
     height: 100%;
     margin: 0;
     padding: 0;
     background-color: $grey;
+    transition: right ease .3s;
 
     img {
       margin: 15px;
     }
+
+    li {
+      font-weight: bold;
+      width: 100%;
+      line-height: 30px;
+      text-align: right;
+      list-style-type: none;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding-right: 15px;
+      }
+    }
+
+    li:last-of-type {
+      background-color: #ededed;
+
+      a {
+        color: $grey;
+      }
+    }
   }
 
   &-aberto {
-    background-color: red;
+    right: 0 !important;
   }
 
   @media screen and (min-width: 1024px) {
@@ -41,18 +64,28 @@
     }
 
     ul {
-
+      position: relative;
+      right: 0;
+      display: flex;
       justify-content: space-around;
-      text-decoration: none;
-      list-style: none;
       line-height: 36px;
+      background-color: #E0E0E0;
+      align-items: center;
 
-      background-color: white;
-
-      li {
-        padding: 0 15px;
-        font-weight: bold;
+      img {
+        display: none;
       }
+
+      li,
+      li:last-of-type {
+        padding: 0 15px;
+        background-color: white;
+
+        a {
+          color: $grey;
+        }
+      }
+
     }
   }
 }

@@ -18,6 +18,7 @@ export class MenuComponent implements OnInit {
   }
 
   toggleMenu(): void {
-    console.log('abrir');
+    let menu = document.querySelector('ul');
+    menu.classList.toggle('menu-aberto');
   }
 }
