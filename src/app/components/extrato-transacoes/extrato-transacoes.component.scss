@@ -1,0 +1,25 @@
+@import '~src/assets/sass/styles';
+
+.extrato-transacoes {
+  padding: 15px;
+
+  table {
+    width: 100%;
+    border: none;
+    border-spacing: 0;
+
+    tr {
+
+      th,
+      td {
+        border-bottom: $border;
+        line-height: 36px;
+      }
+    }
+
+    tr:last-of-type>td {
+      border-top: $border;
+      border-bottom: none;
+    }
+  }
+}

@@ -1,23 +1,26 @@
 <section class="nova-transacao">
-  <h2>Nova Transação</h2>
+  <h3>Nova Transação</h3>
 
   <form [formGroup]="transacaoForm" (ngSubmit)="registrar()">
-    <div class="form-group">
-      <div class="form-item">
-        <label for="">Tipo de transação</label>
-        <select formControlName="tipo">
-          <option value="{{i}}" *ngFor="let i of tipoObject">{{i}}</option>
-        </select>
-      </div>
+    <div class="form-group" formArrayName="items">
+      <div [formGroupName]="i">
+        <div class="form-item">
+          <label for="">Tipo de transação</label>
+          <select formControlName="tipo">
+            <option value="" disabled selected>Selecione</option>
+            <option value="{{i}}" *ngFor="let i of tipoObject">{{i}}</option>
+          </select>
+        </div>
 
-      <div class="form-item">
-        <label for="">Nome da Mercadoria</label>
-        <input type="text" formControlName="nome">
-      </div>
+        <div class="form-item">
+          <label for="">Nome da Mercadoria</label>
+          <input type="text" formControlName="nome">
+        </div>
 
-      <div class="form-item">
-        <label for="">Valor</label>
-        <input type="number" formControlName="valor">
+        <div class="form-item">
+          <label for="">Valor</label>
+          <input type="number" formControlName="valor">
+        </div>
       </div>
     </div>
 

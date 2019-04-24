@@ -2,6 +2,18 @@ $border: 1px solid #494949;
 $icon: 20px;
 $grey: #494949;
 
+h3 {
+  text-align: center;
+}
+
 .icon {
   width: $icon;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }

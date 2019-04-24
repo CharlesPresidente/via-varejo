@@ -1,3 +1,23 @@
-<p>
-  extrato-transacoes works!
-</p>
+<section class="extrato-transacoes">
+  <h3>Extrato transações</h3>
+
+  <table>
+    <tr>
+      <th></th>
+      <th class="left">Mercadoria</th>
+      <th class="right">Valor</th>
+    </tr>
+
+    <tr *ngFor="let i of extratoObject">
+      <td>{{i.tipo === 'compra' ? '+' : '-'}}</td>
+      <td>{{i.nome}}</td>
+      <td class="right">R$ {{i.valor}}</td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>Total</td>
+      <td class="right">R$ {{total}}</td>
+    </tr>
+  </table>
+</section>

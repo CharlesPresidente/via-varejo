@@ -6,7 +6,7 @@
   border-bottom: $border;
   padding: 15px;
 
-  h2 {
+  h3 {
     display: none;
   }
 
@@ -41,10 +41,8 @@
     border-radius: 3px;
     border: $border;
 
-    h2 {
+    h3 {
       display: block;
-      width: 100%;
-      text-align: center;
     }
 
     .form-group {
@@ -65,9 +63,5 @@
       width: auto;
       padding: 0 15px;
     }
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 40%;
   }
 }
