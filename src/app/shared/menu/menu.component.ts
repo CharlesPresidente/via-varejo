@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  public fecharIcon = '../../../assets/icons/fechar.svg';
+  public logoIcon = '../../../assets/icons/logo.PNG';
+  public menuIcon = '../../../assets/icons/menu.svg';
+  public menuObject: any = ['Dashbord', 'Resumo', 'Configurações']
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleMenu(): void {
+    console.log('abrir');
+  }
 }

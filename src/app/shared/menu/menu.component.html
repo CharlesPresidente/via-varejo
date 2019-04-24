@@ -1,3 +1,14 @@
-<p>
-  menu works!
-</p>
+<section class="menu">
+  <img [src]="logoIcon" alt="logo">
+
+  <h3>Controle financeiro</h3>
+
+  <button (click)="toggleMenu()">
+    <img class="icon" [src]="menuIcon" alt="menu">
+  </button>
+
+  <ul class="menu-aberto">
+    <img class="icon" [src]="fecharIcon" alt="fechar" (click)="toggleMenu()">
+    <li *ngFor="let i of menuObject">{{i}}</li>
+  </ul>
+</section>

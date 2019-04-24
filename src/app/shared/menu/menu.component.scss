@@ -1,0 +1,58 @@
+@import '~src/assets/sass/styles';
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 30px);
+  height: 86px;
+  margin: 0px;
+  padding: 0 15px;
+  background-color: #E0E0E0;
+  color: $grey;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+
+  ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $grey;
+
+    img {
+      margin: 15px;
+    }
+  }
+
+  &-aberto {
+    background-color: red;
+  }
+
+  @media screen and (min-width: 1024px) {
+    button {
+      display: none;
+    }
+
+    ul {
+
+      justify-content: space-around;
+      text-decoration: none;
+      list-style: none;
+      line-height: 36px;
+
+      background-color: white;
+
+      li {
+        padding: 0 15px;
+        font-weight: bold;
+      }
+    }
+  }
+}
