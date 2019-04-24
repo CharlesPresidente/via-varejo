@@ -15,8 +15,11 @@ export class ExtratoTransacoesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    for (let i = 0; i < this.extratoTransacoesInput.length; i++) {
-      this.total += parseFloat(this.extratoTransacoesInput[i].valor.value);
-    }
+    // for (let i = 0; i < this.extratoTransacoesInput.length; i++) {
+    //   this.total += parseFloat(this.extratoTransacoesInput[i].valor.value);
+    // }
+    let transacoes = window.localStorage.getItem('transacoes');
+    console.log(transacoes);
+    
   }
 }

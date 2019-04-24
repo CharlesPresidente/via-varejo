@@ -27,12 +27,15 @@ export class NovaTransacaoComponent implements OnInit {
   }
 
   addItem(): void {
-    if (this.transacaoForm.invalid) {
-      alert('Error: Favor preencher todos os campos.');
-      return
-    }
+    // if (this.transacaoForm.invalid) {
+    //   alert('Error: Favor preencher todos os campos.');
+    //   return
+    // }
 
     this.extrato.push(this.transacaoForm.controls);
     this.novaTransacaoOutput.emit(this.extrato);
+
+    
+    localStorage.setItem("transacoes", JSON.stringify(this.extrato));
   }
 }
