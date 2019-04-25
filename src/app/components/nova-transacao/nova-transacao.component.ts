@@ -25,36 +25,36 @@ export class NovaTransacaoComponent implements OnInit {
       nome: ['', Validators.required],
       tipo: ['', Validators.required],
       valor: ['', Validators.required]
-    })
+    });
   }
 
   addItem(): void {
-    //validacao
+    // validacao
     if (this.transacaoForm.invalid) {
       alert('Error: Favor preencher todos os campos.');
-      return
+      return;
     }
 
-    let controls = this.transacaoForm.controls;
+    const controls = this.transacaoForm.controls;
 
-    //data
+    // data
     this.extrato.data.push({
       nome: controls.nome.value,
       tipo: controls.tipo.value,
       valor: controls.valor.value
     });
 
-    //total
+    // total
     if (controls.tipo.value === 'Venda') {
       this.extrato.total += parseFloat(controls.valor.value);
     } else {
       this.extrato.total -= parseFloat(controls.valor.value);
     }
 
-    //salvar
+    // salvar
     localStorage.setItem('transacoes', JSON.stringify(this.extrato));
 
-    //limpar
+    // limpar
     this.criarItem();
   }
 }

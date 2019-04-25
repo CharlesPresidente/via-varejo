@@ -16,10 +16,10 @@ export class ExtratoTransacoesComponent implements OnInit, DoCheck {
   ngOnInit() { }
 
   ngDoCheck() {
-    let transacoes = JSON.parse(localStorage.getItem('transacoes'));
+    const transacoes = JSON.parse(localStorage.getItem('transacoes'));
 
     if (!transacoes) {
-      return
+      return;
     }
 
     this.total = transacoes.total;

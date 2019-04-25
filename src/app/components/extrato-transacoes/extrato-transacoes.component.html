@@ -21,7 +21,7 @@
     </tr>
 
     <tr>
-      <td colspan="3" class=" right">{{total > 0 ? '[LUCRO]' : ''}}</td>
+      <td colspan="3" class=" right" *ngIf="total != 0">[{{total > 0 ? 'LUCRO' : 'PREJUÍZO'}}]</td>
     </tr>
   </table>
 </section>

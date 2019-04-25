@@ -16,5 +16,9 @@
         line-height: 36px;
       }
     }
+
+    tr:last-of-type>td {
+      border: none;
+    }
   }
 }
