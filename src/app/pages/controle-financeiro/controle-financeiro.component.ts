@@ -10,5 +10,7 @@ export class ControleFinanceiroComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    localStorage.removeItem('transacoes');
+  }
 }

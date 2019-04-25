@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-extrato-transacoes',
@@ -6,7 +6,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   styleUrls: ['./extrato-transacoes.component.scss']
 })
 
-export class ExtratoTransacoesComponent implements OnInit, OnChanges {
+export class ExtratoTransacoesComponent implements OnInit, DoCheck {
 
   public extratoObject: any = [];
   public total = 0;
@@ -15,7 +15,7 @@ export class ExtratoTransacoesComponent implements OnInit, OnChanges {
 
   ngOnInit() { }
 
-  ngOnChanges() {
+  ngDoCheck() {
     let transacoes = JSON.parse(localStorage.getItem('transacoes'));
 
     if (!transacoes) {
