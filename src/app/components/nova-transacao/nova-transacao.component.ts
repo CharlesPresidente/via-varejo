@@ -51,10 +51,10 @@ export class NovaTransacaoComponent implements OnInit {
       this.extrato.total -= parseFloat(controls.valor.value);
     }
 
-    //enviar dados
+    //salvar
     localStorage.setItem('transacoes', JSON.stringify(this.extrato));
 
-    //zerar inputs
+    //limpar
     this.criarItem();
   }
 }

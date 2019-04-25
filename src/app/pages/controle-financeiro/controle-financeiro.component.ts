@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class ControleFinanceiroComponent implements OnInit {
 
-  public extratoTransacoesInput: any = [];
-
   constructor() { }
 
   ngOnInit() { }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-extrato-transacoes',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./extrato-transacoes.component.scss']
 })
 
-export class ExtratoTransacoesComponent implements OnInit {
+export class ExtratoTransacoesComponent implements OnInit, OnChanges {
 
   public extratoObject: any = [];
   public total = 0;
