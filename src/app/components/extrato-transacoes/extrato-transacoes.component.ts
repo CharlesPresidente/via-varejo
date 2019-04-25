@@ -8,8 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ExtratoTransacoesComponent implements OnInit {
 
-  @Input() extratoTransacoesInput: any = { total: 0, data: [] };
-
   public extratoObject: any = [];
   public total = 0;
 
@@ -17,12 +15,14 @@ export class ExtratoTransacoesComponent implements OnInit {
 
   ngOnInit() { }
 
-  ngOnChachangenges() {
-    if (!this.extratoTransacoesInput) {
+  ngOnChanges() {
+    let transacoes = JSON.parse(localStorage.getItem('transacoes'));
+
+    if (!transacoes) {
       return
     }
 
-    this.total = this.extratoTransacoesInput.total;
-    this.extratoObject = this.extratoTransacoesInput.data;
+    this.total = transacoes.total;
+    this.extratoObject = transacoes.data;
   }
 }

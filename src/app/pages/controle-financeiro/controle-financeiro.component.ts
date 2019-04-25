@@ -13,8 +13,4 @@ export class ControleFinanceiroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
-
-  novaTransacaoOutput(param): void {
-    this.extratoTransacoesInput = param;
-  }
 }

@@ -9,8 +9,6 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 export class NovaTransacaoComponent implements OnInit {
 
-  @Output() novaTransacaoOutput = new EventEmitter();
-
   public extrato: any = { total: 0, data: [] };
   public tipoObject = ['Compra', 'Venda'];
   public total = 0;
@@ -48,16 +46,15 @@ export class NovaTransacaoComponent implements OnInit {
 
     //total
     if (controls.tipo.value === 'Venda') {
-      this.total += parseFloat(controls.valor.value);
+      this.extrato.total += parseFloat(controls.valor.value);
     } else {
-      this.total -= parseFloat(controls.valor.value);
+      this.extrato.total -= parseFloat(controls.valor.value);
     }
-    this.extrato.total = this.total;
 
     //enviar dados
-    this.novaTransacaoOutput.emit(this.extrato);
-    localStorage.setItem("transacoes", JSON.stringify(this.extrato));
+    localStorage.setItem('transacoes', JSON.stringify(this.extrato));
 
+    //zerar inputs
     this.criarItem();
   }
 }
