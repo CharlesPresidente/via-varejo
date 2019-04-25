@@ -8,8 +8,8 @@
       <th class="right">Valor</th>
     </tr>
 
-    <tr *ngFor="let i of extratoTransacoesInput">
-      <td>{{i.tipo === 'compra' ? '+' : '-'}}</td>
+    <tr *ngFor="let i of extratoObject">
+      <td>{{i.tipo === 'Compra' ? '-' : '+'}}</td>
       <td>{{i.nome}}</td>
       <td class="right">R$ {{i.valor}}</td>
     </tr>
@@ -18,6 +18,10 @@
       <td></td>
       <td>Total</td>
       <td class="right">R$ {{total}}</td>
+    </tr>
+
+    <tr>
+      <td colspan="3" class=" right">{{total > 0 ? '[LUCRO]' : 'remover'}}</td>
     </tr>
   </table>
 </section>

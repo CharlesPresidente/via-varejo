@@ -1,5 +1,5 @@
 <section class="controle-financeiro">
   <app-nova-transacao class="nova" (novaTransacaoOutput)="novaTransacaoOutput($event)"></app-nova-transacao>
 
-  <app-extrato-transacoes class="extrato" *ngIf="extratoTransacoesInput.length > 0" [extratoTransacoesInput]="extratoTransacoesInput"></app-extrato-transacoes>
+  <app-extrato-transacoes class="extrato" [extratoTransacoesInput]="extratoTransacoesInput"></app-extrato-transacoes>
 </section>

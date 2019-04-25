@@ -8,18 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ExtratoTransacoesComponent implements OnInit {
 
-  @Input() extratoTransacoesInput: any = [];
+  @Input() extratoTransacoesInput: any = { total: 0, data: [] };
 
+  public extratoObject: any = [];
   public total = 0;
 
   constructor() { }
 
-  ngOnInit() {
-    // for (let i = 0; i < this.extratoTransacoesInput.length; i++) {
-    //   this.total += parseFloat(this.extratoTransacoesInput[i].valor.value);
-    // }
-    let transacoes = window.localStorage.getItem('transacoes');
-    console.log(transacoes);
-    
+  ngOnInit() { }
+
+  ngOnChachangenges() {
+    if (!this.extratoTransacoesInput) {
+      return
+    }
+
+    this.total = this.extratoTransacoesInput.total;
+    this.extratoObject = this.extratoTransacoesInput.data;
   }
 }
