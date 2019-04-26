@@ -35,8 +35,7 @@
     margin-top: 10px;
   }
 
-  @media screen and (min-width: 768px),
-  screen and (min-width: 1023px) {
+  @media screen and (min-width: 768px) {
     margin: 15px;
     padding-top: 0px;
     border-radius: 3px;
@@ -45,24 +44,25 @@
     h3 {
       display: block;
     }
+  }
 
-    //   .form-group {
-    //     display: flex;
-    //     justify-content: space-between;
-    //   }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .form-group {
+      display: flex;
+    }
 
-    //   .form-item {
-    //     width: 25%;
-    //   }
+    .form-item {
+      width: 25%;
+    }
 
-    //   .form-item:nth-last-of-type(2) {
-    //     width: 50%;
-    //     margin: 0 15px;
-    //   }
+    .form-item:nth-last-of-type(2) {
+      width: 50%;
+      margin: 0 15px;
+    }
 
-    //   button {
-    //     width: auto;
-    //     padding: 0 15px;
-    //   }
+    button {
+      width: auto;
+      padding: 0 15px;
+    }
   }
 }

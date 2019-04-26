@@ -2,22 +2,24 @@
   <h3>Nova transação</h3>
 
   <form [formGroup]="transacaoForm" (ngSubmit)="addItem()">
-    <div class="form-item">
-      <label for="">Tipo de transação</label>
-      <select formControlName="tipo">
-        <option value="" disabled selected>Selecione</option>
-        <option value="{{i}}" *ngFor="let i of tipoObject">{{i}}</option>
-      </select>
-    </div>
+    <div class="form-group">
+      <div class="form-item">
+        <label for="">Tipo de transação</label>
+        <select formControlName="tipo">
+          <option value="" disabled selected>Selecione</option>
+          <option value="{{i}}" *ngFor="let i of tipoObject">{{i}}</option>
+        </select>
+      </div>
 
-    <div class="form-item">
-      <label for="">Nome da Mercadoria</label>
-      <input type="text" formControlName="nome">
-    </div>
+      <div class="form-item">
+        <label for="">Nome da Mercadoria</label>
+        <input type="text" formControlName="nome">
+      </div>
 
-    <div class="form-item">
-      <label for="">Valor</label>
-      <input type="number" formControlName="valor">
+      <div class="form-item">
+        <label for="">Valor</label>
+        <input type="number" formControlName="valor">
+      </div>
     </div>
 
     <button type="submit">Adicionar transação</button>
